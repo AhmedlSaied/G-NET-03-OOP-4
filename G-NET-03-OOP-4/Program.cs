@@ -2,6 +2,28 @@
 
 namespace OOPAssignment04
 {
+
+    #region PART 01: THEORETICAL QUESTIONS ANSWERS
+
+    /*
+     * Q1 : Difference between static binding and dynamic binding:
+     * - Static Binding (Early Binding): Resolved at compile time. Method calls are bound directly
+     *   to the object's declared type (e.g., non-virtual methods, overloaded methods).
+     * - Dynamic Binding (Late Binding): Resolved at runtime. Method calls are resolved based on
+     *   the actual underlying object type using the vtable (e.g., overridden virtual/abstract methods).
+     * 
+     * Q2 : Difference between method overloading and method overriding:
+     * - Overloading: Multiple methods in the same class sharing the same name but different signatures
+     *   (parameter count, types, or order). Represents compile-time polymorphism.
+     * - Overriding: Redefining a base class virtual/abstract method in a derived class using the same
+     *   signature. Represents runtime polymorphism.
+     * 
+     * Q3 : Keywords used for Method Overriding:
+     * - virtual: Declared in the base class to allow derived classes to override the method execution.
+     * - override: Declared in derived classes to replace/extend the base class implementation.
+     * - base: Used inside derived classes to invoke the base class implementation explicitly (e.g., base.PrintTicket()).
+     */
+
     #region SUPPORTING CLASSES
 
     public class Projector
@@ -72,7 +94,7 @@ namespace OOPAssignment04
 
         #endregion
 
-    #region Q1.a - Virtual PrintTicket Method
+        #region Q1.a - Virtual PrintTicket Method
 
         public virtual void PrintTicket()
         {
@@ -191,9 +213,8 @@ namespace OOPAssignment04
         {
             Console.WriteLine("\n========== Cinema Closed ==========");
             projector.Stop();
+            #endregion
         }
     }
-
-    #endregion
 }
-
+#endregion
