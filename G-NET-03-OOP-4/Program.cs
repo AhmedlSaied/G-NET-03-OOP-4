@@ -1,4 +1,5 @@
 ﻿using System;
+using OOPAssignment04;
 
 namespace OOPAssignment04
 {
@@ -218,3 +219,61 @@ namespace OOPAssignment04
     }
 }
 #endregion
+#region PROGRAM ENTRY POINT
+
+class Program
+{
+    #region PART 02 - QUESTION 4: PROCESS TICKET METHOD
+
+    public static void ProcessTicket(Ticket t)
+    {
+        Console.WriteLine("========== Process Single Ticket ==========");
+        t.PrintTicket();
+    }
+
+    #endregion
+
+    static void Main(string[] args)
+    {
+
+        #region PART 02 - QUESTION 5: MAIN EXECUTION FLOW
+
+        Cinema cinema = new Cinema("Grand Cinema");
+
+        // 5.a - Open Cinema
+        cinema.OpenCinema();
+        Console.WriteLine();
+
+        // 5.b - Create Tickets
+        StandardTicket ticket1 = new StandardTicket("Inception", 120m, "A-5");
+        VIPTicket ticket2 = new VIPTicket("Avengers", 200m, true);
+        IMAXTicket ticket3 = new IMAXTicket("Dune", 180m, false);
+
+        // 5.c - Test SetPrice Overloading
+        Console.WriteLine("========== SetPrice Test ==========");
+        ticket1.SetPrice(150m);
+        Console.WriteLine($"Setting price directly: {ticket1.Price:F0}");
+
+        ticket1.SetPrice(100m, 1.5m);
+        Console.WriteLine($"Setting price with multiplier: 100 x 1.5 = {ticket1.Price:F0}\n");
+
+        // 5.d - Add tickets & Print All
+        cinema.AddTicket(ticket1);
+        cinema.AddTicket(ticket2);
+        cinema.AddTicket(ticket3);
+
+        cinema.PrintAllTickets();
+        Console.WriteLine();
+
+        // 5.e - Call ProcessTicket()
+        ProcessTicket(ticket2);
+
+        // 5.f - Close Cinema
+        cinema.CloseCinema();
+
+        #endregion
+    }
+}
+
+    #endregion
+
