@@ -71,6 +71,15 @@ namespace OOPAssignment04
         }
 
         #endregion
+
+    #region Q1.a - Virtual PrintTicket Method
+
+        public virtual void PrintTicket()
+        {
+            Console.Write($"Ticket #{TicketId} | {MovieName} | Price: {Price:F0} EGP | After Tax: {PriceAfterTax:F2} EGP");
+        }
+
+        #endregion
     }
     #endregion
 }
